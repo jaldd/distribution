@@ -8,3 +8,4 @@ springboot+springcloud套件+eureka+zuul+feign+rabbitmq+redis+mysql+hibernate+mo
 
 dubbo:
 springboot+dubbo+zookeeper+mysql+mybatis+redis+amq
+
