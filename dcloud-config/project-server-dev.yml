@@ -10,7 +10,7 @@ management:
       exposure:
         include: refresh,health
 server:
-  port: 7122
+  port: 7121
 
 eureka:
   password: 123
