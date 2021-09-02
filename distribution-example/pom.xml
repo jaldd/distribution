@@ -5,14 +5,16 @@
     <parent>
         <groupId>org.shaotang.distribution</groupId>
         <artifactId>distribution</artifactId>
-        <version>${project-version}</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
     <artifactId>distribution-example</artifactId>
-    <version>${project-version}</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>distribution-example</name>
     <modules>
         <module>distribution-example-user</module>
+<!--        <module>distribution-example-sequence</module>-->
+        <module>distribution-example-eureka</module>
     </modules>
     <dependencies>
     </dependencies>
@@ -21,6 +23,11 @@
             <dependency>
                 <groupId>org.shaotang.distribution</groupId>
                 <artifactId>distribution-example-user</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.shaotang.distribution</groupId>
+                <artifactId>distribution-example-sequence</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

@@ -12,7 +12,7 @@
 
     <groupId>org.shaotang.distribution</groupId>
     <artifactId>distribution</artifactId>
-    <version>${project-version}</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>spring-cloud-loadbalancer-user</name>
     <description>My Distribution Project</description>
 
@@ -20,7 +20,6 @@
         <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
         <java.version>1.8</java.version>
         <spring-cloud.version>2020.0.0</spring-cloud.version>
-        <project-version>0.0.1-SNAPSHOT</project-version>
     </properties>
     <dependencies>
         <dependency>
@@ -60,6 +59,21 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.7</version>
+                <!--
+                1，配置mvn环境变量，并检验mvn -version
+                2，进行版本统一更改 mvn versions:set -DnewVersion=your version
+                4,执行成功后，打开项目检查pom文件发现都已经更改了
+                5,撤销更改的版本 mvn versions:revert
+                6,提交更改 mvn versions:commit
+                -->
+                <configuration>
+                    <generateBackupPoms>false</generateBackupPoms>
+                </configuration>
             </plugin>
         </plugins>
     </build>
