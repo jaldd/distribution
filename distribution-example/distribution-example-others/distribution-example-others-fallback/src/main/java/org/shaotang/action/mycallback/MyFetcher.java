@@ -1,4 +1,4 @@
-package org.shaotang.action;
+package org.shaotang.action.mycallback;
 
 public class MyFetcher implements Fetcher {
 
