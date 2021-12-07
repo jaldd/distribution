@@ -35,6 +35,11 @@
                 <artifactId>distribution-example-sequence</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.shaotang.distribution</groupId>
+                <artifactId>distribution-example-hadoop</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

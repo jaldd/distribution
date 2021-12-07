@@ -17,6 +17,7 @@ public class BlockingIoExample {
         PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), false);
         String request, response;
         while ((request = in.readLine()) != null) {
+
             if ("Done".equals(request)) {
                 break;
             }
@@ -28,5 +29,9 @@ public class BlockingIoExample {
     private String processRequest(String request) {
 
         return "Processed";
+    }
+
+    public static void main(String[] args) throws IOException {
+        new BlockingIoExample().serve(25);
     }
 }
