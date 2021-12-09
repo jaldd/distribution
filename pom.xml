@@ -64,7 +64,10 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+    <modules>
+        <module>distribution-example</module>
+        <module>springboot-config</module>
+    </modules>
     <build>
         <pluginManagement>
             <plugins>

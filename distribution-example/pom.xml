@@ -15,6 +15,7 @@
         <module>distribution-example-user</module>
 <!--        <module>distribution-example-sequence</module>-->
         <module>distribution-example-eureka</module>
+        <module>distribution-example-hadoop</module>
     </modules>
     <dependencies>
     </dependencies>
