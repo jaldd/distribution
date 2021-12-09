@@ -23,6 +23,7 @@ public class HdfsClient {
 
         Configuration config=new Configuration();
         fs = FileSystem.get(uri, config,"root");
+
     }
 
     @After
