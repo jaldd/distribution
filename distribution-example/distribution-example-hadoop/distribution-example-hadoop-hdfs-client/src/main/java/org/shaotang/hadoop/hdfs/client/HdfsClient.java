@@ -22,7 +22,7 @@ public class HdfsClient {
         FileSystem  fs = FileSystem.get(uri, config,"root");
 
         fs.mkdirs(new Path("/xiyou/huaguoshan"));
-
+        System.out.println("");
         fs.close();
     }
 
