@@ -35,7 +35,7 @@ public class HdfsClient {
     public void testMkdir() throws URISyntaxException, IOException, InterruptedException {
 
 
-        fs.mkdirs(new Path("/xiyou/tiantang"));
+        fs.mkdirs(new Path("/xiyou/tianting"));
 
 
     }
