@@ -50,23 +50,11 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-webflux</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-loadbalancer</artifactId>
-            </dependency>
         </dependencies>
     </dependencyManagement>
     <modules>
         <module>distribution-example</module>
-        <module>springboot-config</module>
+<!--        <module>springboot-config</module>-->
     </modules>
     <build>
         <pluginManagement>
