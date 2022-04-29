@@ -12,6 +12,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>distribution-example</name>
     <modules>
+        <module>distribution-example-elasticsearch</module>
         <module>distribution-example-user</module>
         <module>distribution-example-sequence</module>
         <module>distribution-example-eureka</module>

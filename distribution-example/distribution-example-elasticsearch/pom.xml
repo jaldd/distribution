@@ -8,11 +8,10 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <packaging>pom</packaging>
-    <artifactId>distribution-example-redis</artifactId>
+    <artifactId>distribution-example-elasticsearch</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>distribution-example</name>
     <modules>
-        <module>distribution-example-redis-reactive</module>
+        <module>distribution-example-elasticsearch-client</module>
     </modules>
     <dependencies>
     </dependencies>
