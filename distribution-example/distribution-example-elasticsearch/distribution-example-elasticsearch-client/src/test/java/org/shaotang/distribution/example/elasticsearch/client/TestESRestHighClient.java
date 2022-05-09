@@ -1,4 +1,4 @@
-package org.shaotang.distribution.example.elasticsearch;
+package org.shaotang.distribution.example.elasticsearch.client;
 
 import cn.hutool.json.JSONUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +22,7 @@ import org.junit.Test;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
-public class ESClientDemo01 {
+public class TestESRestHighClient {
 
     @Test
     public void createIndex() throws Exception {
