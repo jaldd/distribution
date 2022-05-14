@@ -2,6 +2,9 @@ server.port: 8002
 spring:
   application:
     name: client-1
+logging:
+  level: DEBUG
+
 
 eureka:
   instance:
