@@ -7,17 +7,6 @@ import java.io.IOException;
 public class WordCountDriver extends AbstractWordCountDriver {
 
 
-//    public boolean execute(String inputPath, String outputPath) throws IOException, InterruptedException, ClassNotFoundException {
-//
-//        Job job = getJob();
-//        job.setInputFormatClass(CombineTextInputFormat.class);
-//        CombineTextInputFormat.setMaxInputSplitSize(job, 4194304);
-//        FileInputFormat.setInputPaths(job, new Path(inputPath));
-//        FileOutputFormat.setOutputPath(job, new Path(outputPath));
-//        return job.waitForCompletion(true);
-//    }
-
-
     public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
 
 
