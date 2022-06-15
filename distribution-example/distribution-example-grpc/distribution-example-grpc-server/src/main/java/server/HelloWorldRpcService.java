@@ -1,16 +1,13 @@
 package server;
 
 import io.grpc.stub.StreamObserver;
-import proto.com.example.grpc.Greeting;
-import proto.com.example.grpc.HelloResp;
-import grpc.HelloWorldGrpc;
 
-public class HelloWorldRpcService extends HelloWorldGrpc.HelloWorldImplBase {
+public class HelloWorldRpcService extends com.example.grpc.HelloWorldGrpc.HelloWorldImplBase {
  
     @Override
-    public void sayHello(Greeting request, StreamObserver<HelloResp> responseObserver) {
+    public void sayHello(com.example.grpc.Greeting request, StreamObserver<com.example.grpc.HelloResp> responseObserver) {
         String name = request.getName();
-        HelloResp resp = HelloResp.newBuilder()
+        com.example.grpc.HelloResp resp = com.example.grpc.HelloResp.newBuilder()
                 .setReply("Hello " + name + "!")
                 .build();
         responseObserver.onNext(resp);
