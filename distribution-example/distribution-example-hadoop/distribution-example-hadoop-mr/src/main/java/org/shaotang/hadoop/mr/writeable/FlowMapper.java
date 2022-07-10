@@ -25,7 +25,6 @@ public class FlowMapper extends Mapper<LongWritable, Text, Text, FlowBean> {
         outK.set(phone);
         outV.setUpFlow(Long.parseLong(up));
         outV.setDownFlow(Long.parseLong(down));
-
         context.write(outK,outV );
     }
 }

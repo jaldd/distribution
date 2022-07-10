@@ -19,7 +19,6 @@ public class FlowReducer extends Reducer<Text, FlowBean, Text, FlowBean> {
         }
         outV.setUpFlow(totalUp);
         outV.setDownFlow(totalDown);
-
         context.write(key,outV);
     }
 }

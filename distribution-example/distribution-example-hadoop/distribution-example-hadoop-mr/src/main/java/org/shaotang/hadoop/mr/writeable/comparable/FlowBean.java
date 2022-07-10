@@ -1,12 +1,12 @@
-package org.shaotang.hadoop.mr.writeable;
+package org.shaotang.hadoop.mr.writeable.comparable;
 
-import org.apache.hadoop.io.Writable;
+import org.apache.hadoop.io.WritableComparable;
 
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class FlowBean implements Writable {
+public class FlowBean implements WritableComparable<FlowBean> {
 
     private long upFlow;
     private long downFlow;
@@ -30,6 +30,10 @@ public class FlowBean implements Writable {
 
     public long getSumFlow() {
         return upFlow + downFlow;
+    }
+
+    public void setSumFlow() {
+        this.sumFlow = upFlow + downFlow;;
     }
 
     public FlowBean() {
@@ -58,5 +62,22 @@ public class FlowBean implements Writable {
 //                ", sumFlow=" + sumFlow +
 //                '}';
         return upFlow + "\t" + downFlow + '\t' + getSumFlow();
+    }
+
+    @Override
+    public int compareTo(FlowBean o) {
+
+        if (this.sumFlow > o.sumFlow) {
+            return -1;
+        } else if (this.sumFlow < o.sumFlow) {
+            return 1;
+        }
+
+        if (this.upFlow > o.upFlow) {
+            return 1;
+        } else if (this.upFlow < o.upFlow) {
+            return - 1;
+        }
+        return 0;
     }
 }

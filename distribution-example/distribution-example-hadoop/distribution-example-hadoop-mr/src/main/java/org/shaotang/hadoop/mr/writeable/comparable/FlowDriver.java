@@ -1,11 +1,11 @@
-package org.shaotang.hadoop.mr.writeable;
+package org.shaotang.hadoop.mr.writeable.comparable;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.mapreduce.Job;
 
 import java.io.IOException;
 
@@ -20,14 +20,15 @@ public class FlowDriver {
         job.setMapperClass(FlowMapper.class);
         job.setReducerClass(FlowReducer.class);
 
-        job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(FlowBean.class);
+        job.setMapOutputKeyClass(FlowBean.class);
+        job.setMapOutputValueClass(Text.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FlowBean.class);
 
-        FileInputFormat.setInputPaths(job,new Path("distribution-example/distribution-example-hadoop/distribution-example-hadoop-mr/src/main/resources/input/inputflow"));
-        FileOutputFormat.setOutputPath(job,new Path("distribution-example/distribution-example-hadoop/distribution-example-hadoop-mr/src/main/resources/output/outputflow"));
+        //删除其他文件只留下part-r-00000
+        FileInputFormat.setInputPaths(job,new Path("distribution-example/distribution-example-hadoop/distribution-example-hadoop-mr/src/main/resources/output/outputflow"));
+        FileOutputFormat.setOutputPath(job,new Path("distribution-example/distribution-example-hadoop/distribution-example-hadoop-mr/src/main/resources/output/outputflow3"));
 
         boolean res = job.waitForCompletion(true);
 
