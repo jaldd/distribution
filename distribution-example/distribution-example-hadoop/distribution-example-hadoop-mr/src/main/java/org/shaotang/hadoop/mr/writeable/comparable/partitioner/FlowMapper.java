@@ -22,8 +22,8 @@ public class FlowMapper extends Mapper<LongWritable, Text, FlowBean, Text> {
         String up = split[1];
         String down = split[2];
         outK.setUpFlow(Long.parseLong(up));
-        outK.setDownFlow(Long .parseLong(down));
+        outK.setDownFlow(Long.parseLong(down));
         outK.setSumFlow();
-        context.write(outK,outV );
+        context.write(outK, outV);
     }
 }
