@@ -2,11 +2,13 @@ package org.shaotang.zk;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.*;
+import org.apache.zookeeper.data.Stat;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 @Slf4j
 public class TestZkClient {
@@ -28,5 +30,21 @@ public class TestZkClient {
     public void create() throws IOException, InterruptedException, KeeperException {
         String hello = zooKeeper.create("/hello", "hello".getBytes(StandardCharsets.UTF_8), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
 
+    }
+
+    @Test
+    public void createChildren() throws InterruptedException, KeeperException {
+        List<String> children = zooKeeper.getChildren("/", true);
+        for (String child : children) {
+            System.out.println(child);
+        }
+        Thread.sleep(Long.MAX_VALUE);
+    }
+
+    @Test
+    public void exists() throws InterruptedException, KeeperException {
+
+        Stat exists = zooKeeper.exists("/hello", false);
+        System.out.println(exists);
     }
 }
