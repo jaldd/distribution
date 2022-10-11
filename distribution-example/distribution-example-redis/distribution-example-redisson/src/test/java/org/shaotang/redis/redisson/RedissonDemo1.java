@@ -1,12 +1,12 @@
-package org.shaotang.redis.jedis;
+package org.shaotang.redis.redisson;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.redisson.Redisson;
 import org.redisson.api.RAtomicLong;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
-import org.redisson.config.TransportMode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -23,11 +23,19 @@ public class RedissonDemo1 {
     @Before
     public void before() {
         config = new Config();
-        config.setTransportMode(TransportMode.EPOLL);
-        config.useClusterServers()
-                //可以用"rediss://"来启用SSL连接
-                .addNodeAddress("redis://hadoop-pseudo:16379");
+//        config.setTransportMode(TransportMode.EPOLL);
+        config.useSingleServer().setAddress("redis://hadoop-pseudo:16379");
     }
+    @Test
+    public void test1() throws ExecutionException, InterruptedException {
+        RedissonClient client = Redisson.create(config);
+        RAtomicLong longObject = client.getAtomicLong("myLong");
+// 同步执行方式
+        longObject.compareAndSet(3, 401);
+// 异步执行方式
+        Boolean result = longObject.compareAndSet(3, 401);
+        System.out.println(result);
+        }
 
     @Test
     public void test() throws ExecutionException, InterruptedException {

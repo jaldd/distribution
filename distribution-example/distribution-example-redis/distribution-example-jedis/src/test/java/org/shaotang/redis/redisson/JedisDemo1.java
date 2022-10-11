@@ -1,4 +1,4 @@
-package org.shaotang.redis.jedis;
+package org.shaotang.redis.redisson;
 
 import redis.clients.jedis.Jedis;
 
