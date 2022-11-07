@@ -35,10 +35,14 @@ public class TestSteam {
 
     //如果Spliterator中存在剩余元素，则对其中的「所有剩余元素」在「当前线程中」执行传入的action回调。如果Spliterator启用了ORDERED特性，会按照顺序处理剩余所有元素。
     // 这是一个接口默认方法，方法体比较粗暴，直接是一个死循环包裹着tryAdvance()方法，直到false退出循环
+    //  forEachRemaining()方法需要遍历的元素总量的估计值，如果样本个数是无限、计算成本过高或者未知，会直接返回Long.MAX_VALUE
     @Test
     public void testForEachRemaining() {
 
+        System.out.println(spliterator.estimateSize());
         spliterator.forEachRemaining(num -> System.out.println(num + ":" + round.getAndIncrement()));
+        System.out.println(spliterator.estimateSize());
+        System.out.println(spliterator.getExactSizeIfKnown());
     }
 
 
