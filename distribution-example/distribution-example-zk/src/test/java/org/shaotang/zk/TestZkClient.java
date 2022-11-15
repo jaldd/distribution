@@ -29,7 +29,7 @@ public class TestZkClient {
     @Test
     public void create() throws IOException, InterruptedException, KeeperException {
         String hello = zooKeeper.create("/hello", "hello".getBytes(StandardCharsets.UTF_8), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
-
+        System.out.println(hello);
     }
 
     @Test
