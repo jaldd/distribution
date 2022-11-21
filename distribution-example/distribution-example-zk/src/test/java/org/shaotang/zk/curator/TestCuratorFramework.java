@@ -13,11 +13,11 @@ import org.junit.Test;
 public class TestCuratorFramework {
 
     private CuratorFramework client;
-    private String connectString = "hadoop-pseudo:21811";
 
     @Before
     public void before() throws InterruptedException {
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3, 5000);
+        String connectString = "hadoop-pseudo:21811";
         client = CuratorFrameworkFactory.builder()
                 .connectString(connectString)
                 .sessionTimeoutMs(3000)

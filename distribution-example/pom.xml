@@ -14,6 +14,7 @@
     <modules>
         <module>distribution-example-elasticsearch</module>
         <module>distribution-example-user</module>
+        <module>distribution-example-zk</module>
         <module>distribution-example-sequence</module>
         <module>distribution-example-eureka</module>
         <module>distribution-example-hadoop</module>
