@@ -3,6 +3,8 @@ spring:
   application:
     name: client-1
 
+logging.level.root: info
+
 #eureka:
 #  instance:
 #    hostname: localhost
