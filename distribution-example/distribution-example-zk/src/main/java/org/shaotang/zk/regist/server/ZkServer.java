@@ -1,4 +1,4 @@
-package org.shaotang.zk.server;
+package org.shaotang.zk.regist.server;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.*;
