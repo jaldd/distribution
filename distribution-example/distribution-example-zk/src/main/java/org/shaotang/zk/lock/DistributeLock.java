@@ -63,7 +63,7 @@ public class DistributeLock {
 
     public void unlock() {
         try {
-            zooKeeper.delete(currentMode,1);
+            zooKeeper.delete(currentMode,-1);
         } catch (InterruptedException | KeeperException e) {
             throw new RuntimeException(e);
         }
