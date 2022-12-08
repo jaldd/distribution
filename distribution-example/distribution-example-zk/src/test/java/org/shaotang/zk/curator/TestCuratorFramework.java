@@ -51,6 +51,17 @@ public class TestCuratorFramework {
         Thread.sleep(10000);
     }
 
+    @Test
+    public void testLock2() throws InterruptedException {
+        String lockPath = "/lockTest";
+        for (int i = 0; i < 50; i++) {
+            InterProcessMutex lock = new InterProcessMutex(client, lockPath);
+            System.out.println("i:" + i);
+            new Thread(new InterProcess(i, lock)).start();
+        }
+        Thread.sleep(10000);
+    }
+
     static class InterProcess implements Runnable {
 
         private Integer current;
@@ -69,12 +80,20 @@ public class TestCuratorFramework {
                 lock.acquire();
                 System.out.println("current:" + current);
                 log.info("current:" + current);
+
+                lock.acquire();
+                System.out.println("current 重入:" + current);
+
+                lock.release();
+                System.out.println("current 重入释放:" + current);
+
                 Thread.sleep(100);
             } catch (Exception e) {
                 log.error(e.getMessage(), e);
             } finally {
                 try {
                     lock.release();
+                    System.out.println("current release:" + current);
                 } catch (Exception e) {
                     log.error(e.getMessage(), e);
                 }
