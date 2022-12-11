@@ -22,7 +22,7 @@
         <spring-cloud.version>2020.0.3</spring-cloud.version>
         <zk.version>3.5.7</zk.version>
         <curator.version>5.4.0</curator.version>
-        <lombok.version>1.18.22</lombok.version>
+        <lombok.version>1.18.24</lombok.version>
     </properties>
     <dependencies>
 
@@ -35,7 +35,11 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.8.8</version>
+            <version>5.8.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
 
         <dependency>
