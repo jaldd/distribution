@@ -18,7 +18,11 @@ public class SourceTest {
         List<Event> events = new ArrayList<>();
         events.add(new Event("a", "/a", 100));
         DataStreamSource<Event> fromCollection = environment.fromCollection(events);
+
         fromCollection.print("2");
+
+        DataStreamSource<Event> fromElements = environment.fromElements(new Event("b", "/b", 100));
+        fromElements.print("3");
         environment.execute();
     }
 }
