@@ -10,6 +10,10 @@
     <artifactId>distribution-example-sequence</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>distribution-example-user</name>
+
+    <modules>
+        <module>distribution-example-sequence-mysql</module>
+    </modules>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
