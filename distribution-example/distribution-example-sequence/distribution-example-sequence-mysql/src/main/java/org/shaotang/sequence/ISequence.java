@@ -1,4 +1,4 @@
-package org.shaotang.sequence.mysql;
+package org.shaotang.sequence;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public interface ISequence<T extends Number> {
 
     T nextVal(String key, T current);
 
-    List<T> nextVal(String var1, T current, int count);
+    List<T> nextVal(String key, T current, int count);
 
     T currentVal(String key);
 }
