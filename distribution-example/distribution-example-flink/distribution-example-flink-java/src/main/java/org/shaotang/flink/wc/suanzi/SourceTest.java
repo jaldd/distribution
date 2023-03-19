@@ -12,17 +12,27 @@ public class SourceTest {
         StreamExecutionEnvironment environment = StreamExecutionEnvironment.getExecutionEnvironment();
         environment.setParallelism(1);
         DataStreamSource<String> streamSource = environment.readTextFile("distribution-example/distribution-example-flink/distribution-example-flink-java/src/main/resources/input/inputsz/clicks.txt");
-        streamSource.print("1");
+
 
 
         List<Event> events = new ArrayList<>();
         events.add(new Event("a", "/a", 100));
         DataStreamSource<Event> fromCollection = environment.fromCollection(events);
 
-        fromCollection.print("2");
 
         DataStreamSource<Event> fromElements = environment.fromElements(new Event("b", "/b", 100));
-        fromElements.print("3");
+
+        //nc -lk 6666
+        DataStreamSource<String> streamSource4=environment.socketTextStream("127.0.0.1",6666);
+
+
+
+//        streamSource.print("1");
+//        fromCollection.print("2");
+//        fromElements.print("3");
+        streamSource4.print("4");
+
+
         environment.execute();
     }
 }
