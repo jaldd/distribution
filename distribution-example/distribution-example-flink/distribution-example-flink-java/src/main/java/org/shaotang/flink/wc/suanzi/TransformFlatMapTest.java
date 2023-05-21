@@ -13,8 +13,15 @@ public class TransformFlatMapTest {
         environment.setParallelism(1);
 
         DataStreamSource<Event> streamSource = environment.fromElements(
-                new Event("a", "/a", 200),
-                new Event("b", "/b", 100));
+                new Event("a", "/a1", 200),
+                new Event("a", "/a2", 300),
+                new Event("a", "/a3", 200),
+                new Event("a", "/a4", 100),
+                new Event("a", "/a3", 200),
+                new Event("a", "/b1", 200),
+                new Event("b", "/b1", 100),
+                new Event("b", "/b1", 100),
+                new Event("b", "/b2", 100));
         SingleOutputStreamOperator<String> map = streamSource.flatMap(new MyFlatMapper());
 
         map.print("1");
