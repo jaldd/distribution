@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: kafka
+  kafka:
+    bootstrap-servers: pdc-hadoop-dev-06:6667 #这个是你server.properties中配置的
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: test-consumer-group #这个去config/consumer.properties中查看和修改
+      # 不过好像不一样也不影响？
+server:
+  port: 8001
