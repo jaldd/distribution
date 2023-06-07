@@ -22,6 +22,7 @@
         <module>distribution-example-grpc</module>
         <module>distribution-example-redis</module>
         <module>distribution-example-others</module>
+        <module>distribution-example-starrocks</module>
     </modules>
     <dependencies>
     </dependencies>

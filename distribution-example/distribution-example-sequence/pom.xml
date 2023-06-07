@@ -11,6 +11,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>distribution-example-user</name>
 
+    <packaging>pom</packaging>
     <modules>
         <module>distribution-example-sequence-mysql</module>
     </modules>

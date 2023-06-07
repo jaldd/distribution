@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.shaotang.distribution</groupId>
-        <artifactId>distribution-example-redis</artifactId>
+        <artifactId>distribution-example-sequence</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>distribution-example-sequence-mysql</artifactId>

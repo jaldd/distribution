@@ -10,7 +10,7 @@
     <artifactId>distribution-example-flink-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>distribution-example-hadoop-hdfs-client</name>
-    <packaging>jar</packaging>
+<!--    <packaging>jar</packaging>-->
     <properties>
         <flink.version>1.13.0</flink.version>
         <scala.binary.verison>2.12</scala.binary.verison>
