@@ -12,13 +12,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>distribution-example-starrocks-jdbc</module>
+        <module>distribution-example-starrocks-load</module>
     </modules>
-    <dependencies>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-    </dependencies>
     <dependencyManagement>
         <dependencies>
         </dependencies>

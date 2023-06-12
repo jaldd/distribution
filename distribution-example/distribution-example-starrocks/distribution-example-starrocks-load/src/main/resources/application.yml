@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: starrocks
+
+server:
+  port: 8001
