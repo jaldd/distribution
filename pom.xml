@@ -24,6 +24,7 @@
         <curator.version>5.4.0</curator.version>
         <lombok.version>1.18.24</lombok.version>
         <mysql.version>8.0.16</mysql.version>
+        <easy-excel.version>3.0.5</easy-excel.version>
     </properties>
     <dependencies>
 
@@ -37,6 +38,11 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>5.8.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>${easy-excel.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
