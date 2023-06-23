@@ -54,6 +54,7 @@ public class TestExportController {
 
         writer.finish();
         for (int i = 0; i < 10; i++) {
+            sourceSheet.setRelativeHeadRowIndex(10);
             List<List<Object>> sourceExcelDatas = new ArrayList<>();
 
             sourceExcelDatas.add(Collections.singletonList("上山打老虎" + i + "-" + i));
@@ -151,6 +152,7 @@ public class TestExportController {
             });
 
             log.info("executor executed");
+//            StreamUtils.copy(pin, os);
             StreamUtils.copy(pin, os);
         }
 
