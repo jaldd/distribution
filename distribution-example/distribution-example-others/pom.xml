@@ -11,7 +11,9 @@
     <artifactId>distribution-example-others</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
+        <module>distribution-example-others-basis</module>
         <module>distribution-example-others-fallback</module>
+        <module>distribution-example-others-net</module>
     </modules>
     <dependencies>
     </dependencies>

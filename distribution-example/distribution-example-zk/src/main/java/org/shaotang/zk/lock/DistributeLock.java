@@ -21,16 +21,13 @@ public class DistributeLock {
     private CountDownLatch waitLatch = new CountDownLatch(1);
 
     public DistributeLock() throws IOException, InterruptedException, KeeperException {
-        zooKeeper = new ZooKeeper(connectString, sessionTimeout, new Watcher() {
-            @Override
-            public void process(WatchedEvent watchedEvent) {
+        zooKeeper = new ZooKeeper(connectString, sessionTimeout, watchedEvent -> {
 
-                if (Event.KeeperState.SyncConnected.equals(watchedEvent.getState())) {
-                    countDownLatch.countDown();
-                }
-                if (Event.EventType.NodeDeleted.equals(watchedEvent.getType()) && watchedEvent.getPath().equals(waitPath)) {
-                    waitLatch.countDown();
-                }
+            if (Watcher.Event.KeeperState.SyncConnected.equals(watchedEvent.getState())) {
+                countDownLatch.countDown();
+            }
+            if (Watcher.Event.EventType.NodeDeleted.equals(watchedEvent.getType()) && watchedEvent.getPath().equals(waitPath)) {
+                waitLatch.countDown();
             }
         });
         countDownLatch.await();
