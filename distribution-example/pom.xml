@@ -19,6 +19,7 @@
         <module>distribution-example-eureka</module>
         <module>distribution-example-hadoop</module>
         <module>distribution-example-flink</module>
+        <module>distribution-example-kafka</module>
         <module>distribution-example-grpc</module>
         <module>distribution-example-redis</module>
         <module>distribution-example-others</module>
