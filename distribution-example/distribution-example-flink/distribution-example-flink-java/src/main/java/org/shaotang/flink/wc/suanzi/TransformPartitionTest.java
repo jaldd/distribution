@@ -2,6 +2,7 @@ package org.shaotang.flink.wc.suanzi;
 
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.streaming.api.functions.source.RichParallelSourceFunction;
 
 public class TransformPartitionTest {
     public static void main(String[] args) throws Exception {
@@ -23,7 +24,23 @@ public class TransformPartitionTest {
         //随机
 //        streamSource.shuffle().print().setParallelism(4);
         //轮训
-        streamSource.rebalance().print().setParallelism(4);
+//        streamSource.rebalance().print().setParallelism(4);
+        //rescale 小组内重新分配
+        environment.addSource(new RichParallelSourceFunction<Integer>() {
+            @Override
+            public void run(SourceContext<Integer> sourceContext) throws Exception {
+                for (int i = 0; i < 9; i++) {
+                    if (i % 2 == getRuntimeContext().getIndexOfThisSubtask()) {
+                        sourceContext.collect(i);
+                    }
+                }
+            }
+
+            @Override
+            public void cancel() {
+
+            }
+        }).setParallelism(2).rescale().print().setParallelism(4);
 
         environment.execute();
     }
