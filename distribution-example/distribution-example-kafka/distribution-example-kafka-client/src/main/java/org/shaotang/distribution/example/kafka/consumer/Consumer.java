@@ -14,5 +14,6 @@ public class Consumer {
         User user = JSONUtil.toBean(message, User.class);
         System.out.println("正在为 " + user.getName() + " 办理注册业务...");
         System.out.println("注册成功");
+
     }
 }

@@ -10,6 +10,10 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       group-id: test-consumer-group #这个去config/consumer.properties中查看和修改
+    streams:
+      replicationFactor: 2
+    listener:
+      ack-mode: RECORD
       # 不过好像不一样也不影响？
 server:
   port: 8001
