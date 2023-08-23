@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: rabbitmq
+
+      # 不过好像不一样也不影响？
+server:
+  port: 8001
