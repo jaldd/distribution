@@ -1,6 +1,57 @@
 spring:
   application:
     name: rabbitmq
+############# 基础配置
+# mq 服务器的地址
+spring.rabbitmq.host:
+# mq 服务器的端口
+spring.rabbitmq.port: 5672
+# mq 服务器的连接使用的用户名
+spring.rabbitmq.username:
+# mq 服务器的连接使用的密码
+spring.rabbitmq.password:
+# mq 服务器的连接使用的虚拟机
+spring.rabbitmq.virtual-host:
+
+############# 连接和管道配置
+# When the cache mode is 'CHANNEL', the connection cache size cannot be configured.
+# spring.rabbitmq.cache.connection.mode 为connection 生效 ，connection 连接池的大小
+#spring.rabbitmq.cache.connection.size=3
+# 与broker 连接的 模式 channel 或者 connection 默认channel
+spring.rabbitmq.cache.connection.mode: channel
+# 与broker 连接的默认时间，默认为 60000即 60 秒,超时会会中断并抛出异常，单位毫秒
+spring.rabbitmq.connection-timeout: 1000
+# 每个连接中可以建立的channel 数量，默认值25
+spring.rabbitmq.cache.channel.size: 50
+# 如果已达到channel缓存大小，等待获取channel的时间。 如果为0，则始终创建一个新channel
+# 默认值为 -1，表示不限制等待时间，即一直等待直到获取到可用的 Channel，单位毫秒
+spring.rabbitmq.cache.channel.checkout-timeout: 2000
+# 指定心跳超时，单位秒，0为不指定；默认60s
+spring.rabbitmq.requested-heartbeat: 60
+# 客户端总共可以创建总的channel 数量
+spring.rabbitmq.requested-channel-max: 1024
+########## 生产者配置
+spring.rabbitmq.template.exchange: my_exchange
+# 启用消息投递结果确认
+spring.rabbitmq.publisher-returns: true
+# 启用强制消息投递，即生产者发送消息成功或者失败，需要返回确认消息
+spring.rabbitmq.template.mandatory: true
+# 消息发布者确认模式
+spring.rabbitmq.publisher-confirm-type: correlated
+
+# 发送重试是否可用
+spring.rabbitmq.template.retry.enabled: true
+# 最大重试次数，默认值为 3
+spring.rabbitmq.template.retry.max-attempts: 3
+# 第一次和第二次尝试发布或传递消息之间的间隔，默认值为 1000 毫秒
+spring.rabbitmq.template.retry.initial-interval: 1000
+#表示时间间隔的倍数系数，默认值为 1 当进行第 n 次重试时，
+# 会将时间间隔设置为  initial-interval * multiplier^(n-1) ，用于控制重试时间间隔逐渐增加
+spring.rabbitmq.template.retry.multiplier: 1
+# 表示时间间隔的最大值，默认值为 10000 毫秒
+spring.rabbitmq.template.retry.max-interval: 1000
+
+
 
       # 不过好像不一样也不影响？
 server:
