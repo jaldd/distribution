@@ -1,6 +1,11 @@
 spring:
   application:
     name: rabbitmq
+  rabbitmq:
+    listener:
+      simple:
+        concurrency: 3
+
 ############# 基础配置
 # mq 服务器的地址
 spring.rabbitmq.host:
@@ -50,7 +55,6 @@ spring.rabbitmq.template.retry.initial-interval: 1000
 spring.rabbitmq.template.retry.multiplier: 1
 # 表示时间间隔的最大值，默认值为 10000 毫秒
 spring.rabbitmq.template.retry.max-interval: 1000
-
 
 
       # 不过好像不一样也不影响？
