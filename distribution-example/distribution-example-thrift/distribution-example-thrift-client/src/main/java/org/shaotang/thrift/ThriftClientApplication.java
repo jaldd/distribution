@@ -9,9 +9,6 @@ import org.apache.thrift.transport.TTransportException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * @author huangxun
- */
 @SpringBootApplication
 public class ThriftClientApplication {
 
