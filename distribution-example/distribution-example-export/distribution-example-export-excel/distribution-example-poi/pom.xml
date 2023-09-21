@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.shaotang.distribution</groupId>
-        <artifactId>distribution-example-grpc</artifactId>
+        <artifactId>distribution-example-export-excel</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>distribution-example-grpc-client</artifactId>
+    <artifactId>distribution-example-poi</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <dependencies>
 
@@ -18,12 +18,6 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.shaotang.distribution</groupId>
-            <artifactId>distribution-example-hutool</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
