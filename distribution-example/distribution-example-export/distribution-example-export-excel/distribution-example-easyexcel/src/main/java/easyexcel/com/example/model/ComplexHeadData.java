@@ -1,6 +1,7 @@
 package easyexcel.com.example.model;
 
 import com.alibaba.excel.annotation.ExcelProperty;
+import com.alibaba.excel.annotation.write.style.ContentLoopMerge;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import java.util.Date;
 @EqualsAndHashCode
 public class ComplexHeadData {
     @ExcelProperty(value = {"主标题", "字符串标题"}, index = 0)
+    @ContentLoopMerge(columnExtend = 2)
     private String string;
     @ExcelProperty(value = {"主标题", "日期标题"}, index = 1)
     private Date date;
