@@ -9,7 +9,7 @@
     </parent>
     <packaging>pom</packaging>
     <artifactId>distribution-example</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+<!--    <version>0.0.1-SNAPSHOT</version>-->
     <name>distribution-example</name>
     <modules>
         <module>distribution-example-elasticsearch</module>
@@ -24,6 +24,7 @@
         <module>distribution-example-redis</module>
         <module>distribution-example-others</module>
         <module>distribution-example-starrocks</module>
+        <module>distribution-example-export</module>
     </modules>
     <dependencies>
     </dependencies>

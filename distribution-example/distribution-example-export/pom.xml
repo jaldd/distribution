@@ -9,7 +9,7 @@
     </parent>
     <packaging>pom</packaging>
     <artifactId>distribution-example-export</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+
     <modules>
         <module>distribution-example-export-excel</module>
 <!--        <module>distribution-example-export-pdf</module>-->
