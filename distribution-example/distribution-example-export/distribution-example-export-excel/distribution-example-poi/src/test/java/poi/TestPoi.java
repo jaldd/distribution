@@ -62,6 +62,8 @@ public class TestPoi {
         HSSFCellStyle cellStyle3 = wb.createCellStyle();
 
         cellStyle3.setAlignment(HorizontalAlignment.RIGHT);
+        cellStyle3.setFillForegroundColor(IndexedColors.GREY_50_PERCENT.getIndex());
+        cellStyle3.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         cell3.setCellStyle(cellStyle3);
 //        row.createCell((short) 4).setCellType(HSSFCell.);
 
