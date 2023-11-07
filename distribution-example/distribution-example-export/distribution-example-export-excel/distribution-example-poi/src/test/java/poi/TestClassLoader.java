@@ -14,7 +14,7 @@ import java.util.Map;
 
 @Slf4j
 public class TestClassLoader {
-    public static final String CLASS_FULL_NAME = "RequestHandler";
+    public static final String CLASS_FULL_NAME = "test.RequestHandler";
 
     public static final String METHOD_NAME = "process";
 
@@ -43,6 +43,7 @@ public class TestClassLoader {
                 log.info("after convert:" + invoke);
                 try {
                     classLoader.close();
+                    System.gc();
                 } catch (IOException e) {
                     System.out.println("关闭外部jar失败："+e.getMessage());
                 }

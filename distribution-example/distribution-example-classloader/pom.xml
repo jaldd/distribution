@@ -4,20 +4,19 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.shaotang.distribution</groupId>
-        <artifactId>distribution-example-grpc</artifactId>
+        <artifactId>distribution-example</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>distribution-example-grpc-client</artifactId>
+    <packaging>pom</packaging>
+    <artifactId>distribution-example-classloader</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>distribution-example-classloader-1</module>
+    </modules>
     <dependencies>
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>-->
-<!--        </dependency>-->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
     </dependencies>
+    <dependencyManagement>
+        <dependencies>
+        </dependencies>
+    </dependencyManagement>
 </project>
