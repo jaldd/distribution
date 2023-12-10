@@ -1,4 +1,4 @@
-package org.shaotang.redis.redisson.publish;
+package org.shaotang.redis.jedis.publish;
 
 import io.micrometer.core.instrument.util.StringUtils;
 import org.redisson.api.RTopic;
