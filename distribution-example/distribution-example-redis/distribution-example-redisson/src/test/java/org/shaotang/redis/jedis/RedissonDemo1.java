@@ -1,4 +1,4 @@
-package org.shaotang.redis.redisson;
+package org.shaotang.redis.jedis;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
