@@ -1,6 +1,5 @@
 package org.shaotang.distribution.example.es.client;
 
-import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
@@ -16,6 +15,7 @@ import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilde
 import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -50,10 +50,26 @@ public class TestSynonym {
 ////            throw new MorrowRequestException(ErrorCodes.ES_QUERY_DATA_IS_NULL);
 //            return documents;
 //        }
+
         List<SynonymDocument> list = searchHits.get()
                 .map(SearchHit::getContent)
                 .collect(Collectors.toList());
         System.out.println(list);
+
+        // 获取高亮结果
+        List<SynonymDocument> results = searchHits.getSearchHits().stream()
+                .map(searchHit -> {
+                    SynonymDocument doc = searchHit.getContent();
+                    Map<String, List<String>> highlightFields = searchHit.getHighlightFields();
+                    if (highlightFields.containsKey("name")) {
+                        doc.setName((highlightFields.get("name").get(0)));
+                    }
+                    return doc;
+                })
+                .collect(Collectors.toList());
+
+        System.out.println(list);
+
     }
 
     public static void main(String[] args) {
