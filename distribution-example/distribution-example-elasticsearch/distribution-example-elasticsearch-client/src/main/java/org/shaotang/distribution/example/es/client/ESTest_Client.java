@@ -1,4 +1,5 @@
-package org.shaotang.distribution.example.elasticsearch;
+
+package org.shaotang.distribution.example.es.client;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
