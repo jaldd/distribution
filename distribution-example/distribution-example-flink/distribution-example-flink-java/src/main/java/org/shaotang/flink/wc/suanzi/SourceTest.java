@@ -1,9 +1,7 @@
 package org.shaotang.flink.wc.suanzi;
 
-import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,11 +35,11 @@ public class SourceTest {
         properties.setProperty("bootstrap.servers", "hadoop-pseudo:9092");
         properties.setProperty("group.id", "consumer-group");
         properties.setProperty("auto.offset.reset", "latest");
-        DataStreamSource<String> kafkaStream = environment.addSource(new FlinkKafkaConsumer<String>("test", new SimpleStringSchema(), properties));
+//        DataStreamSource<String> kafkaStream = environment.addSource(new FlinkKafkaConsumer<String>("test", new SimpleStringSchema(), properties));
 
         //kafka生产者控制台调试：./bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
 
-        kafkaStream.print();
+//        kafkaStream.print();
 
 
         environment.execute();
