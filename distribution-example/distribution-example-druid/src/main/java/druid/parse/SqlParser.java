@@ -1,6 +1,6 @@
-package parse;
+package druid.parse;
 
-import parse.select.SqlParseResult;
+import druid.parse.select.SqlParseResult;
 
 /**
  * SQL解析

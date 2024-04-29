@@ -1,4 +1,4 @@
-package parse.select;
+package druid.parse.select;
 
 import com.alibaba.druid.DbType;
 

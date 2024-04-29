@@ -1,4 +1,4 @@
-package parse.select;
+package druid.parse.select;
 
 public abstract class JdbcSelectSqlParser extends AbstractSelectSqlParser {
 

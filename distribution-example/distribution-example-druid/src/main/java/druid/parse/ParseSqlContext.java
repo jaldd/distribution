@@ -1,4 +1,4 @@
-package parse;
+package druid.parse;
 
 import com.alibaba.druid.DbType;
 import com.alibaba.druid.sql.ast.SQLStatement;
@@ -6,10 +6,10 @@ import com.alibaba.druid.sql.dialect.mysql.ast.statement.MySqlCreateTableStateme
 import com.alibaba.druid.sql.parser.SQLParserUtils;
 import com.alibaba.druid.sql.parser.SQLStatementParser;
 import lombok.extern.slf4j.Slf4j;
-import parse.select.MysqlSelectSqlParser;
-import parse.select.SelectSqlParseResult;
-import parse.select.SelectSqlParser;
-import parse.select.SqlParseResult;
+import druid.parse.select.MysqlSelectSqlParser;
+import druid.parse.select.SelectSqlParseResult;
+import druid.parse.select.SelectSqlParser;
+import druid.parse.select.SqlParseResult;
 
 @Slf4j
 public class ParseSqlContext {
