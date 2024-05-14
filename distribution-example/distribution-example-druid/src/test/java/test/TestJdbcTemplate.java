@@ -47,11 +47,11 @@ public class TestJdbcTemplate {
 //                druidDataSource.getConnection();
                 System.out.println("-------");
                 map.put("datasource", druidDataSource);
-//        log.info("expireHandler {}", druidDataSource.getDataSourceStat().getConnectionStat().getConnectLastTime());
                 JdbcTemplate jdbcTemplate = new JdbcTemplate(druidDataSource);
                 jdbcTemplate.update("UPDATE gmdm_integrate.t_catalog\n" +
                         "SET f_tenant_id=10000, f_parent_id=0, f_name='非主数据域', f_logo='1'" +
                         "WHERE f_id=382827;");
+                log.info("expireHandler {}", druidDataSource.getDataSourceStat().getConnectionStat().getConnectLastTime());
                 System.out.println("success");
             } catch (Exception e) {
                 throw new RuntimeException(e);
