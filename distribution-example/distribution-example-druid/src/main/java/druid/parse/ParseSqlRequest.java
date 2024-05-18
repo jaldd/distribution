@@ -1,4 +1,4 @@
-package parse;
+package druid.parse;
 
 import lombok.Data;
 
