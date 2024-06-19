@@ -1,5 +1,8 @@
 package org.shaotang.flink.bean;
 
+import lombok.Data;
+
+@Data
 public class WaterSensor {
 
     private String id;
