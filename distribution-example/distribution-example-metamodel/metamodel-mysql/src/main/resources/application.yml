@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: meta-model
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url:
+    username:
+    password:
+# 数据库连接池配置
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 60000
+      hikari.max-lifetime: 1800000
+      connection-timeout: 10000
+
+server:
+  port: 8001
