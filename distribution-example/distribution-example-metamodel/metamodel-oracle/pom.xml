@@ -21,6 +21,23 @@
             <version>19.3.0.0</version>
         </dependency>
         <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.metamodel</groupId>
+            <artifactId>MetaModel-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.metamodel</groupId>
+            <artifactId>MetaModel-jdbc</artifactId>
+            <version>${metamodel-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>

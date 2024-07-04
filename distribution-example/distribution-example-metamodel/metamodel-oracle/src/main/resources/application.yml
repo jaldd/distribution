@@ -2,6 +2,12 @@ spring:
   application:
     name: meta-model
 # 数据库连接池配置
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@//10.2.214.9:1521/helowinXDB
+    username: test
+    password: test
+    # 数据库连接池配置
     hikari:
       minimum-idle: 5
       maximum-pool-size: 20

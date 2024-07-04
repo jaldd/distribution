@@ -1,4 +1,4 @@
-package org.shaotang.distribution.example.metamodel.mysql;
+package org.shaotang.distribution.example.metalmodel.oracle;
 
 import cn.hutool.json.JSONUtil;
 import com.alibaba.druid.pool.DruidDataSource;
@@ -19,9 +19,9 @@ import java.util.*;
 import java.util.function.Consumer;
 
 @Slf4j
-public class MysqlMetamodelService {
+public class OracleMetamodelService {
 
-    public static final String url = "jdbc:mysql://lddtestmysql:3306/test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true";
+    public static final String url = "jdbc:oracle:thin:@//10.2.214.9:1521/helowinXDB";
     public static final String tableName = "lddtest1";
     public static final String schema = "test";
 
@@ -29,7 +29,7 @@ public class MysqlMetamodelService {
     public DataSource getDataSource() {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setUrl(url);
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
         dataSource.setUsername("test");
         dataSource.setPassword("test");
 
@@ -41,7 +41,7 @@ public class MysqlMetamodelService {
         dataSource.setMinEvictableIdleTimeMillis(6000000);
         dataSource.setMaxEvictableIdleTimeMillis(9000000);
         dataSource.setTestWhileIdle(true);
-        dataSource.setValidationQuery("select 1");
+        dataSource.setValidationQuery("select 1 from dual");
         dataSource.setTestOnBorrow(false);
         dataSource.setTestOnReturn(false);
         dataSource.setPoolPreparedStatements(true);
@@ -68,7 +68,7 @@ public class MysqlMetamodelService {
 
         DataSource dataSource = getDataSource();
         DataContext dc = getDataContext(dataSource);
-        String querySql = "select f_code,f_name from " + tableName + " where f_id=1;";
+        String querySql = "select f_code,f_name from " + tableName + " where f_id=1";
 
         List<Map<String, Object>> datas = new ArrayList<>();
         executeSql(dataSource, querySql, datas::add);
@@ -161,6 +161,6 @@ public class MysqlMetamodelService {
 
 
     public static void main(String[] args) {
-        new MysqlMetamodelService().testQuery();
+        new OracleMetamodelService().testQuery();
     }
 }

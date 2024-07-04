@@ -4,9 +4,9 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url:
-    username:
-    password:
+    url: jdbc:mysql://lddtestmysql:13306/material
+    username: test
+    password: test
 # 数据库连接池配置
     hikari:
       minimum-idle: 5
