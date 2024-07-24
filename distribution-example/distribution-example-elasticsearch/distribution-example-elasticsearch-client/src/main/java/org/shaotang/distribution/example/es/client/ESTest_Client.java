@@ -2,6 +2,10 @@
 package org.shaotang.distribution.example.es.client;
 
 import org.apache.http.HttpHost;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.CredentialsProvider;
+import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.support.master.AcknowledgedResponse;
 import org.elasticsearch.client.RequestOptions;
@@ -13,14 +17,21 @@ import org.elasticsearch.client.indices.GetIndexRequest;
 import org.elasticsearch.client.indices.GetIndexResponse;
 
 import java.io.IOException;
-
 public class ESTest_Client {
 
     public static void main(String[] args) throws IOException {
 
-        //创建客户端对象
+        CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+        credentialsProvider.setCredentials(AuthScope.ANY,
+                new UsernamePasswordCredentials("username", "password"));
+
         RestHighLevelClient client = new RestHighLevelClient(
-                RestClient.builder(new HttpHost("es.glodon.com", 80, "http")));
+                RestClient.builder(
+                        new HttpHost("10.0.1.1", 29200, "http")
+                ).setHttpClientConfigCallback(httpAsyncClientBuilder ->
+                        httpAsyncClientBuilder.setDefaultCredentialsProvider(credentialsProvider)
+                )
+        );
         /**
          *该处为索引，⽂档操作，⾼级查询
          */
