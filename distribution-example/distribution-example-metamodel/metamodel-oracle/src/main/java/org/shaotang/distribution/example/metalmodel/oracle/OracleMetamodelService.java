@@ -21,7 +21,7 @@ import java.util.function.Consumer;
 @Slf4j
 public class OracleMetamodelService {
 
-    public static final String url = "jdbc:oracle:thin:@//10.2.214.9:1521/helowinXDB";
+    public static final String url = "jdbc:oracle:thin:@//lddtest:1521/helowinXDB";
     public static final String tableName = "lddtest1";
     public static final String schema = "test";
 
@@ -161,6 +161,8 @@ public class OracleMetamodelService {
 
 
     public static void main(String[] args) {
-        new OracleMetamodelService().testQuery();
+        String encodingValue = null;
+        encodingValue += "a";
+        System.out.println(encodingValue);
     }
 }
